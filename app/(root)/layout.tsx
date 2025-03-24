@@ -7,7 +7,7 @@ import { isAuthenticated } from '@/lib/actions/auth.action';
 const RootLayout = async ({children}: {children: ReactNode}) => {
   const isUserAuthenticated = await isAuthenticated();
   //此处待修复，是登录的逻辑 初步判断session cookie的问题
-  //if(!isUserAuthenticated) redirect('/sign-in');
+  if(!isUserAuthenticated) redirect('/sign-in');
   return (
     <div className='root-layout'>
       <nav>
